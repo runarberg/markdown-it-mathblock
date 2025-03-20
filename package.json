@@ -1,0 +1,41 @@
+{
+  "name": "markdown-it-mathblock",
+  "version": "0.1.0",
+  "description": "A markdown-it plugin for fenced block math",
+  "type": "module",
+  "main": "index.js",
+  "types": "types/index.js",
+  "scripts": {
+    "clean": "rm -fr coverage/ types/",
+    "check": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepare": "npm run types",
+    "prettier": "prettier --write .",
+    "prettier:ci": "prettier --check .",
+    "test": "node --test --experimental-test-coverage ./test/**/{test,*.test}.js",
+    "test:coverage-badge": "mkdir -p coverage && node --test --experimental-test-coverage --test-reporter ./test/reporters/coverage-badge-reporter.js --test-reporter-destination coverage/badge.svg",
+    "test:watch": "node --test --watch",
+    "types": "tsc index.js --allowJS --declaration --declarationMap --emitDeclarationOnly --esModuleInterop --outDir types"
+  },
+  "keywords": [
+    "markdown-it",
+    "markdown-it-plugin",
+    "math"
+  ],
+  "author": "Rúnar Berg Baugsson Sigríðarson <runarberg@zoho.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^22.13.9",
+    "badge-maker": "^4.1.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-jsdoc": "^50.6.3",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^16.0.0",
+    "markdown-it": "^14.1.0",
+    "prettier": "3.5.3",
+    "typescript": "^5.8.2"
+  }
+}
