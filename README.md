@@ -320,8 +320,8 @@ $$
 
 [commonmark#fenced-code-blocks]: https://spec.commonmark.org/0.31.2/#fenced-code-blocks
 [custom-element-registry]: https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry
-[markdown-it-math]: https://github.com/runarberg/math
-[markdown-it-mathspan]: https://github.com/runarberg/mathspan
+[markdown-it-math]: https://github.com/runarberg/markdown-it-math
+[markdown-it-mathspan]: https://github.com/runarberg/markdown-it-mathspan
 [mathup]: https://mathup.xyz/
 [temml]: https://temml.org/
 [temml-custom-element]: https://github.com/runarberg/temml-custom-element
