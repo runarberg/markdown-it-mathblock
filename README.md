@@ -1,5 +1,11 @@
 # markdown-it-mathblock
 
+[![ci](https://github.com/runarberg/markdown-it-mathblock/actions/workflows/ci.yml/badge.svg)](https://github.com/runarberg/markdown-it-mathblock/actions/workflows/ci.yml)
+![Coverage](https://runarberg.github.io/markdown-it-mathblock/badge.svg)
+[![npm](https://img.shields.io/npm/v/markdown-it-mathblock.svg)](https://www.npmjs.com/package/markdown-it-mathblock)
+[![License](https://img.shields.io/npm/l/markdown-it-mathblock)](https://github.com/runarberg/markdown-it-mathblock/blob/main/LICENSE)
+[![Downloads](https://img.shields.io/npm/dm/markdown-it-mathblock)](https://npm-stat.com/charts.html?package=markdown-it-mathblock)
+
 > A markdown-it plugin to render block math that feels like markdown.
 
 Pairs well with [markdown-it-mathspan][markdown-it-mathspan].
@@ -153,7 +159,8 @@ $$
   }
   ```
 - **`customElement`**: If you want to specify which custom element to
-  render into, this is a convenience option to do so. The default is:
+  render into, this is a convenience option to do so. Accepts a pair of
+  `["tag-name", { attribute: "value" }]` The default is:
   ```js
   {
     customElement: ["math-up", { display: "block" }],
@@ -163,11 +170,12 @@ $$
 ### Default renderer
 
 The default renderer depends on which custom element depends on which
-elements are in in your [custom elment-registry][custom-element-registry].
+elements are in in your [custom element registry][custom-element-registry].
 It will try the following in order:
 
-1. `<math-up>` ([see mathup][mathup])
-2. `<la-tex>` ([see temml][temml] and [temml-custom-element][temml-custom-element])
+1. `<math-up display="block">` ([see mathup][mathup])
+2. `<la-tex display="block">` ([see Temml][temml] and
+   [temml-custom-element][temml-custom-element])
 3. If none is found it will default to `<div class="math block">`
 
 ## Examples
@@ -176,7 +184,7 @@ Use with [markdown-it-mathspan][markdown-it-mathspan]:
 
 ```js
 import markdownIt from "markdown-it";
-import markdownItBlock from "markdown-it-mathblock";
+import markdownItMathblock from "markdown-it-mathblock";
 import markdownItSpan from "markdown-it-mathspan";
 import "mathup/custom-element";
 
@@ -217,7 +225,7 @@ Use the info string.
 
 ```js
 import markdownIt from "markdown-it";
-import markdownItBlock from "markdown-it-mathblock";
+import markdownItMathblock from "markdown-it-mathblock";
 import "mathup/custom-element";
 
 const md = markdownIt().use(markdownItMathblock, {
@@ -248,7 +256,7 @@ might want to include the stylesheet from mathup for this.
 
 ```js
 import markdownIt from "markdown-it";
-import markdownItBlock from "markdown-it-mathblock";
+import markdownItMathblock from "markdown-it-mathblock";
 import mathup from "mathup";
 
 const md = markdownIt().use(markdownItMathblock, {
@@ -268,7 +276,7 @@ might want to include the stylesheet and fonts from Temml for this.
 
 ```js
 import markdownIt from "markdown-it";
-import markdownItBlock from "markdown-it-mathblock";
+import markdownItMathblock from "markdown-it-mathblock";
 import temml from "temml";
 
 const md = markdownIt().use(markdownItMathblock, {
@@ -287,7 +295,7 @@ Pass in custom attributes to the renderer `<math-up>` element:
 
 ```js
 import markdownIt from "markdown-it";
-import markdownItBlock from "markdown-it-mathblock";
+import markdownItMathblock from "markdown-it-mathblock";
 import "mathup/custom-element";
 
 const md = markdownIt().use(markdownItMathblock, {
@@ -314,6 +322,6 @@ $$
 [custom-element-registry]: https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry
 [markdown-it-math]: https://github.com/runarberg/math
 [markdown-it-mathspan]: https://github.com/runarberg/mathspan
-[mathup]: https://runarberg.github.io/mathup/
+[mathup]: https://mathup.xyz/
 [temml]: https://temml.org/
 [temml-custom-element]: https://github.com/runarberg/temml-custom-element
